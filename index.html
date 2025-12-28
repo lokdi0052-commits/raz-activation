@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechNova Solutions</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    line-height:1.6;
+}
+header{
+    background:#111;
+    color:#fff;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:15px;
+}
+.hero{
+    padding:80px 20px;
+    text-align:center;
+    background:#f4f4f4;
+}
+.hero h1{
+    margin-bottom:10px;
+}
+.hero button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:#111;
+    color:#fff;
+    cursor:pointer;
+}
+section{
+    padding:50px 20px;
+    text-align:center;
+}
+.services{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+.card{
+    background:#eaeaea;
+    padding:20px;
+    width:250px;
+    border-radius:5px;
+}
+footer{
+    background:#111;
+    color:#fff;
+    padding:20px;
+    text-align:center;
+}
+footer a{
+    color:#ccc;
+    text-decoration:none;
+    margin:0 5px;
+}
+.popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+.popup-content{
+    background:#fff;
+    padding:20px;
+    max-width:500px;
+    margin:10% auto;
+}
+.close{
+    float:right;
+    cursor:pointer;
+    font-size:20px;
+}
+@media(max-width:600px){
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TechNova Solutions</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>Digital Solutions Made Simple</h1>
+    <p>Web development, automation & tech services for businesses.</p>
+    <button onclick="scrollContact()">Contact Us</button>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        TechNova Solutions provides affordable and reliable digital services
+        including website development, automation tools, and software support
+        for individuals and small businesses.
+    </p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">Website Development</div>
+        <div class="card">Automation & Scripts</div>
+        <div class="card">Technical Consulting</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: technovasolutions@gmail.com</p>
+    <p>Phone: +91 9XXXXXXXXX</p>
+</section>
+
+<footer>
+    <p>© 2025 TechNova Solutions</p>
+    <a href="#" onclick="showPolicy()">Privacy Policy</a> |
+    <a href="#" onclick="showTerms()">Terms & Conditions</a>
+</footer>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+        <p id="popupText"></p>
+    </div>
+</div>
+
+<script>
+function scrollContact(){
+    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+function showPolicy(){
+    document.getElementById("popupText").innerText =
+    "We respect user privacy. No personal data is shared with third parties. Payments are processed securely.";
+    document.getElementById("popup").style.display="block";
+}
+function showTerms(){
+    document.getElementById("popupText").innerText =
+    "All services are digital. Payments once made are non-refundable unless stated otherwise.";
+    document.getElementById("popup").style.display="block";
+}
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
